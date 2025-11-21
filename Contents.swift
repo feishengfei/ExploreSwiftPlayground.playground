@@ -78,17 +78,17 @@ let people : [PersonWithHobby] = [
     ),
     PersonWithHobby(
     name: "grover",
-    hobby: "political"
+    hobby: ""
     ),
     PersonWithHobby(
     name: "oscar",
-    hobby: "Watching movie"
+    hobby: ""
     ),
 ]
 
 printDash(comment: "struct iteration")
 for p in people {
-    print("\(p.name.capitalized) like \(p.hobby)")
+    print("\(p.name.capitalized) likes to \(p.hobby).")
 }
 
 /*
@@ -99,3 +99,59 @@ for p in people {
  */
 var s = "hEllo wOrld"
 print(s.capitalized)
+
+// optional: ?=
+var x: Int = 7
+var y: Int? = 10
+
+x = 12345
+y = 12345
+y = -18
+y = nil   // legal: 'nil' can be assigned to optional int value
+//x = nil // 'nil' cannot be assigned to type 'Int'
+
+// Billion dollar error
+
+struct PersonWithOptHobby {
+    let name: String
+    let hobby: String?
+}
+
+let people2 : [PersonWithOptHobby] = [
+    PersonWithOptHobby(
+    name: "ron",
+    hobby: "skateboard"
+    ),
+    PersonWithOptHobby(
+    name: "Elmo",
+    hobby: "KTV"
+    ),
+    PersonWithOptHobby(
+    name: "cookie",
+    hobby: "cooking"
+    ),
+    PersonWithOptHobby(
+    name: "big bird",
+    hobby: "flying"
+    ),
+    PersonWithOptHobby(
+    name: "grover",
+    hobby: nil
+    ),
+    PersonWithOptHobby(
+    name: "oscar",
+    hobby: nil
+    ),
+]
+
+printDash()
+for p in people2 {
+    if let hobby = p.hobby {
+        print("\(p.name.capitalized) likes \(hobby).")
+    }
+    else {
+        print("\(p.name) has no hobby.")
+    }
+}
+
+printDash()
