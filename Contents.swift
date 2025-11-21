@@ -88,6 +88,14 @@ let people : [PersonWithHobby] = [
 
 printDash(comment: "struct iteration")
 for p in people {
-    print("\(p.name) like \(p.hobby)")
+    print("\(p.name.capitalized) like \(p.hobby)")
 }
 
+/*
+ .capitalized 是 只读计算属性，不是存储属性
+ 不会在初始化时就计算，每次访问时根据字符串的当前值生成新的结果
+ Swift 不用 ()，因为它是 无参数计算属性
+ 原字符串不变，返回新字符串副本
+ */
+var s = "hEllo wOrld"
+print(s.capitalized)
