@@ -147,7 +147,7 @@ let people2 : [PersonWithOptHobby] = [
 printDash()
 for p in people2 {
     if let hobby = p.hobby {
-        print("\(p.name.capitalized) likes \(hobby).")
+        print("\(p.name.capitalized) likes to \(hobby).")
     }
     else {
         print("\(p.name) has no hobby.")
