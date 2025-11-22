@@ -45,20 +45,15 @@ dumpValue(Double.greatestFiniteMagnitude)
 
 // Division
 print("Division")
-print(7/2)
-print(7.0/2)
-print(7/2.0)
-print(7/Double(2))
+let dividend = 112
 
-let x = 112
-let d = 112 / 5
-let remainder = x % 5
-
-do {
-    let result = try divide(112, 0)
-    print(result)
-} catch {
-    print("Error:", error)
+for divisor in 0..<10 {
+    do {
+        let result = try divide(dividend, divisor)
+        print("\(dividend) / \(divisor) = \(result)")
+    } catch {
+        print("\(dividend) / \(divisor) error: \(error)")
+    }
 }
 
 
